@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SignPostService} from './signpost.service'
+import { Component, OnInit } from '@angular/core';
+import { SignPostService} from './signpost.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
         this.signPostService.getSignPosts()
             .subscribe(
                 (response) => {
-                    console.log("sign posts", response.json());
+                    console.log('sign posts', response.json());
                 },
                 (error) => console.log(error))
     }
