@@ -2,10 +2,23 @@
 <div class="row">
         <div class="col-md-12">
                 <p>De seguida é apresentado um Mapa onde pode escolher o Sign-Post mais apropriado para si!</p>
-          </div>
         </div>
-        <hr>
-<agm-map [latitude]= "latitude" [longitude]= "longitude">
+</div>
+<hr>
+<div class="container">
+        <h1>Procure a Localização do seu SignPost</h1>
+        <div class="form-group">
+                <input placeholder="Procure a localização" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+                        #search [formControl]="searchControl">
+        </div>
+        <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+                <agm-marker [latitude]="lat" [longitude]="long">
+                        <agm-info-window>
+                                <strong>SignPost 1</strong>
+                                <br>
 
-</agm-map>
-
+                                <button class="btn btn-primary" routerLink="/message">Ola</button>
+                        </agm-info-window>
+                </agm-marker>
+        </agm-map>
+</div>

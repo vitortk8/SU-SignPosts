@@ -1,15 +1,16 @@
 import { SignpostComponent } from './sign-post/signpost/signpost.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@Angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { SignPostComponent } from './sign-post/sign-post.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MesageComponent } from './sign-post/mesage/mesage.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'app', pathMatch: 'full'},
-    { path: 'sign-post', component: SignPostComponent},
     { path: 'signpost', component: SignpostComponent},
-    { path: 'navbar', component: NavbarComponent}
+    { path: 'navbar', component: NavbarComponent},
+    { path: 'message', component: MesageComponent},
 ];
 
 
