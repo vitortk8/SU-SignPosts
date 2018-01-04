@@ -12,14 +12,6 @@ export class AppComponent implements OnInit{
 
     constructor (private signPostService: SignPostService){}
 
-    getSignPosts(){
-        this.signPostService.getSignPosts()
-            .subscribe(
-                (response) => {
-                    console.log('sign posts', response.json());
-                },
-                (error) => console.log(error))
-    }
 
     onPost(){
         this.signPostService.storeProfile()

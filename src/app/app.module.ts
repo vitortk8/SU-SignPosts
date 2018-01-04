@@ -1,3 +1,4 @@
+import { DataStorageService } from './shared/data-storage.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,9 +9,8 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignPostService } from './signpost.service';
-import { SignPostComponent } from './sign-post/sign-post.component';
-import { SignpostComponent } from './sign-post/signpost/signpost.component';
-import { MesageComponent } from './sign-post/mesage/mesage.component';
+import { MapComponent } from './sign-post/map/map.component';
+import { MessageComponent } from './sign-post/message/message.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -18,9 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignPostComponent,
-    SignpostComponent,
-    MesageComponent
+    MapComponent,
+    MessageComponent
   ],
   imports: [
       BrowserModule,
@@ -32,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         libraries: ['places']
       })
   ],
-  providers: [SignPostService],
+  providers: [SignPostService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

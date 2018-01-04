@@ -1,33 +1,50 @@
+import { DataStorageService } from './../../shared/data-storage.service';
+import { SignPost } from './../signpost.model';
+import { SignPostService } from './../../signpost.service';
 import { ElementRef, NgZone, OnInit, ViewChild, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
-
+import { Subscription } from 'rxjs';
 
 
 @Component({
-  selector: 'app-signpost',
-  templateUrl: './signpost.component.html',
-  styleUrls: ['./signpost.component.css']
+  selector: 'app-map',
+  templateUrl: 'map.component.html',
+  styleUrls: ['map.component.css']
 })
-export class SignpostComponent implements OnInit {
+export class MapComponent implements OnInit {
   lat = 41.4414846;
   long = -8.29393101;
-  latitude  = 41.4414846;
+  latitude = 41.4414846;
   longitude = -8.29393101;
   zoom = 13;
   label = 'A';
+  signPosts: SignPost[];
+  subscription: Subscription;
   public searchControl: FormControl;
+
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) { }
+    private ngZone: NgZone, private signPostService: SignPostService, private dataStorageService: DataStorageService) { 
+
+    }
 
 
   ngOnInit() {
-       // create search FormControl
+    this.subscription = this.signPostService.signPostChanged
+    .subscribe(
+      (signPosts: SignPost[]) => {
+        this.signPosts = signPosts;
+      }
+    );
+    this.dataStorageService.getSignPosts();
+    this.signPosts = this.signPostService.getSignPosts();
+    console.log(this.signPosts);
+    // create search FormControl
     this.searchControl = new FormControl();
 
     // set current position
@@ -56,6 +73,11 @@ export class SignpostComponent implements OnInit {
       });
     });
   }
+
+
+ngOnDestroy() {
+  this.subscription.unsubscribe();
+}
 
   private setCurrentPosition() {
     if ('geolocation' in navigator) {

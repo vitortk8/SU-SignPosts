@@ -1,0 +1,84 @@
+{
+  "signposts": [
+    {
+      "id": 1,
+      "isActive": false,
+      "numberOfDisplays": 4,
+      "address": "628 Maple Avenue, Caledonia, South Carolina, 1213",
+      "latitude": 33.452436,
+      "longitude": -79.155027
+    },
+    {
+      "id": 2,
+      "isActive": false,
+      "numberOfDisplays": 4,
+      "address": "777 Broome Street, Cetronia, Utah, 7184",
+      "latitude": 57.217711,
+      "longitude": -123.118832
+    },
+    {
+      "id": 3,
+      "isActive": false,
+      "numberOfDisplays": 2,
+      "address": "841 Garden Place, Blairstown, Colorado, 1260",
+      "latitude": -62.187845,
+      "longitude": -34.910787
+    },
+    {
+      "id": 4,
+      "isActive": false,
+      "numberOfDisplays": 4,
+      "address": "934 Columbia Place, Blackgum, Massachusetts, 5781",
+      "latitude": -62.873926,
+      "longitude": 116.769594
+    },
+    {
+      "id": 5,
+      "isActive": true,
+      "numberOfDisplays": 3,
+      "address": "451 Harrison Place, Coyote, Tennessee, 2620",
+      "latitude": -38.745606,
+      "longitude": -106.953382
+    },
+    {
+      "id": 6,
+      "isActive": true,
+      "numberOfDisplays": 4,
+      "address": "666 Tillary Street, Fairhaven, West Virginia, 793",
+      "latitude": 56.412347,
+      "longitude": -78.249705
+    },
+    {
+      "id": 7,
+      "isActive": true,
+      "numberOfDisplays": 5,
+      "address": "622 Troutman Street, Gasquet, Oklahoma, 6885",
+      "latitude": 35.767422,
+      "longitude": 12.704231
+    },
+    {
+      "id": 8,
+      "isActive": false,
+      "numberOfDisplays": 4,
+      "address": "459 Conselyea Street, Allentown, South Dakota, 9667",
+      "latitude": -85.343112,
+      "longitude": 135.314916
+    },
+    {
+      "id": 9,
+      "isActive": true,
+      "numberOfDisplays": 4,
+      "address": "945 Gunther Place, Kersey, American Samoa, 3588",
+      "latitude": -64.580994,
+      "longitude": -59.689904
+    },
+    {
+      "id": 30,
+      "isActive": true,
+      "numberOfDisplays": 4,
+      "address": "666 Tillary Street, Fairhaven, West Virginia, 793",
+      "latitude": 56.412347,
+      "longitude": -78.249705
+    }
+  ]
+}
