@@ -14,11 +14,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['map.component.css']
 })
 export class MapComponent implements OnInit {
-  lat = 41.4414846;
-  long = -8.29393101;
   latitude = 41.4414846;
   longitude = -8.29393101;
-  zoom = 13;
+  zoom = 5;
   label = 'A';
   signPosts: SignPost[];
   subscription: Subscription;
