@@ -10,13 +10,14 @@ import { Response } from '@angular/http';
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css']
 })
+
 export class MessageComponent implements OnInit {
   messageForm: FormGroup;
-  constructor(private dataStorageService: DataStorageService, private route: ActivatedRoute) { }
+    constructor(private dataStorageService: DataStorageService,
+                private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.initForm();
-
   }
 
   onSubmit() {
@@ -28,7 +29,15 @@ export class MessageComponent implements OnInit {
       })
       .subscribe(
         (response: Response) => {
-          console.log(response);
+            console.log(response.json());
+            console.log(response.json().idMessage);
+            this.dataStorageService.updateDisplay(
+                this.route.snapshot.params['id'], 1, response.json().idMessage
+            ).subscribe(
+                (resp: Response) => {
+                    console.log("subscribe do subscribe", resp.json())
+                }
+            );
         }
       );
   }
